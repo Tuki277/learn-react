@@ -2,17 +2,57 @@ import React, { Component } from 'react'
 import './App.css';
 
 class App extends Component {
+
+    // hiển thị bằng function
+    showInfo = (object) => {
+        if (object.status === true)
+        {
+            return <h3>
+                        id : { object.id } <br />
+                        name : { object.name } <br />
+                        price : { object.price } VNĐ <br />
+                        status : { object.status ? 'Active' : 'Pending' }
+                    </h3>
+        }
+    }
+
     render() {
 
-        // được phép tạo biến ở trong đây, còn ngoài render đẻ tạo các props, state
+        // được phép tạo biến ở trong đây, còn ngoài render đẻ tạo các props, state, và các function
         var a = 5;
         var b = 6;
         var name = "huy 123"
         var object = {
             id : 1,
             name : 'iphone xsmax',
-            price : 10000
+            price : 10000,
+            status : true
         }
+
+        var users = [
+            {
+                id : 1,
+                name : "user 1",
+                age : 18
+            },
+            {
+                id : 2,
+                name : "user 2",
+                age : 19
+            },
+            {
+                id : 3,
+                name : "user 3",
+                age : 20
+            },
+        ]
+
+        var elements = users.map((users, index) => {
+            return  <div key={ users.id }>
+                        <h3>Ho ten : { users.name }</h3>
+                        <p>Tuoi : { users.age }</p>
+                    </div>
+        })
 
         return (
             <div>
@@ -27,7 +67,7 @@ class App extends Component {
                         </li>
                     </ul>
                 </nav>
-                <div>
+                <div className="ml-30">
                     <h2>
                         a : { a } <br />
                         b : { b } <br />
@@ -39,11 +79,13 @@ class App extends Component {
                     <br />
                     <h4>Hiển thị các object</h4>
                     {/* Hiển thị object */}
-                    <h3>
-                        id : { object.id } <br />
-                        name : { object.name } <br />
-                        price : { object.price }
-                    </h3>
+                    {/* gọi function để hiển thị  */}
+                    { this.showInfo(object) }
+                    <br />
+
+                    <h2>Viết kiểu biến</h2>
+
+                    { elements }
 
                 </div>
             </div>
