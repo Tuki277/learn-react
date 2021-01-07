@@ -11,3 +11,12 @@
 // càng chia nhỏ các components thì càng dễ quản lý
 
 // cách viết function là cách viết theo cách cũ, class là cách viết của cú phát ES6
+
+//=================================================================================================================================
+++ Props
+
+// Props là thuộc tính của Conponents
+
+// Truyền dữ liệu từ cha -> con, theo dạng key="value" ( không đặt tên key = children ) value nhận vào dữ liệu là kiểu chuỗi. Bỏ dấu { } để truyền đúng kiểu dữ liệu
+
+// Nhận lại thông qua từ khóa : this.props.key
