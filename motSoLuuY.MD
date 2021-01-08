@@ -39,3 +39,30 @@ gọi và sử dụng Props
 // cú pháp : thêm thuộc tính ref = "key"
 
 // lấy giá trị : this.refs.key.value
+
+// chú ý :
+    ++ đặt ref như thế này [ ref={(node) => { this.node = node }} ]
+    ++ lấy giá trị trong hàm là [ console.log(this.node.value) ]
+
+//=================================================================================================================================
+++ State
+
+// là trạng thái của components
+
+// khai báo những giá trị cần lưu trữ riêng của components đó
+
+// tạo State tại constructor. Gọi this.state = { key : value, key1 : value1, ... }
+
+// Gọi state: this.state.key
+
+// Thay đổi state : this.setState({ key : value, key1 : value1, ... })
+
+// Khi setState được gọi => hàm render được gọi
+
+// so sánh
+
+            props                    ||          state
+<!-- ============================================================ -->
+    Nhận dữ liệu từ bên ngoài        ||    Nhận dữ liệu nội bộ
+    Không thể thay đổi giá trị       ||    Có thể thay đổi giá trị
+                                     ||    Phạm vị Private trong components
