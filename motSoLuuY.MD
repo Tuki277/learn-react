@@ -30,3 +30,12 @@ gọi và sử dụng Props
         // blind function
     -- cách 2 ( khuyên dùng, nhanh gọn hơn cách 1)
         // tên_function = () => { }
+
+//=================================================================================================================================
+++ Refs
+
+// lấy giá trị của các ô ( input, textarea, v.v ... )
+
+// cú pháp : thêm thuộc tính ref = "key"
+
+// lấy giá trị : this.refs.key.value
