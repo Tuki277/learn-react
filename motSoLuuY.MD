@@ -20,3 +20,13 @@
 // Truyền dữ liệu từ cha -> con, theo dạng key="value" ( không đặt tên key = children ) value nhận vào dữ liệu là kiểu chuỗi. Bỏ dấu { } để truyền đúng kiểu dữ liệu
 
 // Nhận lại thông qua từ khóa : this.props.key
+
+//=================================================================================================================================
+++ Handling event
+
+gọi và sử dụng Props
+    -- cách 1
+        // Tạo constructor có tham số props và gọi super(props)
+        // blind function
+    -- cách 2 ( khuyên dùng, nhanh gọn hơn cách 1)
+        // tên_function = () => { }
