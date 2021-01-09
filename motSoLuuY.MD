@@ -66,3 +66,19 @@ gọi và sử dụng Props
     Nhận dữ liệu từ bên ngoài        ||    Nhận dữ liệu nội bộ
     Không thể thay đổi giá trị       ||    Có thể thay đổi giá trị
                                      ||    Phạm vị Private trong components
+
+//=================================================================================================================================
+++ Form
+
+// text, textarea, select, radio, checkbox( đặc biệt )
+
+// lưu ý
+    + chặn submit form ( preventDefault() : là hàm chặn submit form )
+    + nhận giá trị onChange và hiển thị bằng value
+    + nhận giá trị form bằng onSubmit
+
+// button trong form, type phải là submit
+
+// khi submit form thì phải thêm value cho từng ô input, nếu k có thì k đổ ra được giá trị mặc định của ô input ( khi có value thì phải kèm theo onChange )
+
+// ở radio input cần thêm checked đẻ set giá trị mặc định cho radio
