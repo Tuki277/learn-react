@@ -82,3 +82,7 @@ gọi và sử dụng Props
 // khi submit form thì phải thêm value cho từng ô input, nếu k có thì k đổ ra được giá trị mặc định của ô input ( khi có value thì phải kèm theo onChange )
 
 // ở radio input cần thêm checked đẻ set giá trị mặc định cho radio
+
+//=================================================================================================================================
+
+//componentWillMount khi refesh thì sẽ hàm sẽ tự động được gọi lại và chỉ gọi duy nhất 1 lần
