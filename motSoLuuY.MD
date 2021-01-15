@@ -102,3 +102,6 @@ gọi và sử dụng Props
 
 // <NavLink exact activeStyle = {{ color : 'white' }} to='/'>Trang chủ</NavLink>  ( activeStyle để hiển thị link đang được kích hoạt, color là thuộc tính của css)
 
+++ Custom Link
+
+// xem ví dụ trong src/App.js

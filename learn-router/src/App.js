@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
 import './App.css';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Home from './Components/Home'
 import About from './Components/About'
+import NotFound from './Components/NotFound'
+import Menu from './Components/Menu'
+
+// custom link
+{/* tách ra file cho dễ quản lý ( src/Menu ) */}
 
 class App extends Component {
     render() {
@@ -10,29 +15,15 @@ class App extends Component {
             <Router>
                 <div className="App">
 
-                    <nav className="navbar navbar-inverse">
-                        <ul className="nav navbar-nav">
-                            <li>
+                    {/* tách ra file cho dễ quản lý ( src/Menu ) */}
+                    <Menu />
 
-                                {/* Sử dụng NavLink */}
-
-                                {/* <Link to='/'>Trang chủ</Link> */}
-
-                                {/* sử dụng activeStyle */}
-                                {/* <NavLink exact activeStyle = {{ color : 'white' }} to='/'>Trang chủ</NavLink> */}
-
-                                {/* sử dụng activeClass */}
-                                <NavLink activeClassName="active" to='/'>Trang chủ</NavLink>
-                            </li>
-                            <li>
-
-                                {/* <Link to='/about'>About</Link> */}
-                                <NavLink activeClassName="active" to='/about'>About</NavLink>
-                            </li>
-                        </ul>
-                    </nav>
-                    <Route path="/" exact component={Home} />
-                    <Route path="/about" component={About} />
+                    <Switch>
+                        <Route path="/" exact component={Home} />
+                        <Route path="/about" component={About} />
+                        <Route component={NotFound} />
+                    </Switch>
+                    
                 </div>
             </Router>
 
