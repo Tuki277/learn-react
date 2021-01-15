@@ -19,7 +19,7 @@
 
 // Truyền dữ liệu từ cha -> con, theo dạng key="value" ( không đặt tên key = children ) value nhận vào dữ liệu là kiểu chuỗi. Bỏ dấu { } để truyền đúng kiểu dữ liệu
 
-// Nhận lại thông qua từ khóa : this.props.key
+// Nhận lại data thông qua từ khóa : this.props.key
 
 //=================================================================================================================================
 ++ Handling event
@@ -28,7 +28,7 @@ gọi và sử dụng Props
     -- cách 1
         // Tạo constructor có tham số props và gọi super(props)
         // blind function
-    -- cách 2 ( khuyên dùng, nhanh gọn hơn cách 1)
+    -- cách 2 ( khuyên dùng, nhanh gọn hơn cách 1 không phải bind )
         // tên_function = () => { }
 
 //=================================================================================================================================
@@ -86,3 +86,7 @@ gọi và sử dụng Props
 //=================================================================================================================================
 
 //componentWillMount khi refesh thì sẽ hàm sẽ tự động được gọi lại và chỉ gọi duy nhất 1 lần
+
+// thực hiện thay đổi và không gửi data đi thì dùng type = button
+
+// nếu thực hiện thay đổi và gửi data đi thì dùng type = submit
