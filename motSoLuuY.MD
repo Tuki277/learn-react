@@ -99,3 +99,6 @@ gọi và sử dụng Props
 // router thêm vào thì không được load lại trang ( chỉ thay đổi nội dung ), đó mới là đúng phương châm của react. Để làm được điều đó thì sử dụng thẻ <Link>
 
 // ví dụ : <Link to='/'>Trang chủ</Link>
+
+// <NavLink exact activeStyle = {{ color : 'white' }} to='/'>Trang chủ</NavLink>  ( activeStyle để hiển thị link đang được kích hoạt, color là thuộc tính của css)
+
