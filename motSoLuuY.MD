@@ -90,3 +90,12 @@ gọi và sử dụng Props
 // thực hiện thay đổi và không gửi data đi thì dùng type = button
 
 // nếu thực hiện thay đổi và gửi data đi thì dùng type = submit
+
+//=================================================================================================================================
+++ React router
+
+// Nếu bị trùng path với nhau ( ví dụ path = '/' và path = '/about' ( trùng dâu '/' ) phải thên thuộc tính exact )
+
+// router thêm vào thì không được load lại trang ( chỉ thay đổi nội dung ), đó mới là đúng phương châm của react. Để làm được điều đó thì sử dụng thẻ <Link>
+
+// ví dụ : <Link to='/'>Trang chủ</Link>
