@@ -105,3 +105,7 @@ gọi và sử dụng Props
 ++ Custom Link
 
 // xem ví dụ trong src/App.js
+
+++ Đối tượng match
+
+// công dụng chỉ sử dụng react ở một số chức năng còn lại vẫn request về phía server
