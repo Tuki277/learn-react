@@ -11,6 +11,11 @@ const menus = [
         name : 'Gioi thieu',
         path : '/about',
         exact : false
+    },
+    {
+        name : 'San pham',
+        path : '/products',
+        exact : false
     }
 ]
 
