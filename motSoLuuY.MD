@@ -111,3 +111,5 @@ gọi và sử dụng Props
 // công dụng chỉ sử dụng react ở một số chức năng còn lại vẫn request về phía server
 
 // Match là tham số đầu vào của hàm React router
+
+++ Redirect

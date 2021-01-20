@@ -3,7 +3,7 @@ import Home from './Components/Home'
 import About from './Components/About'
 import NotFound from './Components/NotFound'
 import Products from './Components/Products'
-import ProductsDetail from './Components/ProductsDetail'
+import Login from './Components/Login'
 
 const router = [
     {
@@ -21,6 +21,11 @@ const router = [
         exact : false,
         // match để bắt được từng id của sản phẩm
         main : ({match}) => <Products match={match}/>
+    },
+    {
+        path : '/login',
+        exact : false,
+        main : () => <Login/>
     },
     {
         path : '',
