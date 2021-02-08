@@ -35,6 +35,7 @@ class App extends Component {
             },
         ]
 
+        // vòng lặp lấy ra các object trong array products
         let elements = products.map((products, index) => {
             let result = ''
             if (products.status) {

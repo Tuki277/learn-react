@@ -35,7 +35,6 @@ class Login extends Component {
 
     render() {
 
-        var { username, password } = this.state
         var login = localStorage.getItem('user')
         if (login !== null)
         {

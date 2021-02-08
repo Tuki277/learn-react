@@ -1,0 +1,22 @@
+{
+    "products" : [
+        {
+            "id" : 1,
+            "name" : "Ip1",
+            "price" : 500,
+            "status" : true
+        },
+        {
+            "id" : 2,
+            "name" : "Ip2",
+            "price" : 200,
+            "status" : true
+        },
+        {
+            "id" : 3,
+            "name" : "Ip3",
+            "price" : 400,
+            "status" : true
+        }
+    ]
+}

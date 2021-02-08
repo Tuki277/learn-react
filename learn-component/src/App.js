@@ -8,7 +8,7 @@ class App extends Component {
         return (
             <div>
                 {/* <h1>Day la component</h1> */}
-                <Header /> 
+                <Header />
                 {/* đây là cách viết ngắn gọn nếu components k có nội dung gì */}
                 {/* viết đầy đủ nếu có cả nội dung */} {/* <Header></Header> */}
                 <div className="row">
