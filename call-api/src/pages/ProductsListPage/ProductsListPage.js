@@ -1,8 +1,32 @@
 import React, { Component } from 'react'
 import ProductsList from '../../components/ProductsList/ProductsList'
 import ProductItem from '../../components/ProductsItem/ProductsItem'
+import { connect } from 'react-redux'
+import axios from 'axios'
 
 class ProductsListPage extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            products : []
+        }
+    }
+
+    componentDidMount(){
+        axios({
+            method : 'GET',
+            url : 'http://localhost:3000/products',
+            data : null
+        }).then(res => {
+            console.log(res)
+            this.setState({
+                products : res.data
+            })
+        }).catch(err => {
+            console.log(err)
+        })
+    }
 
     showProducts = (products) => {
         var result = null
@@ -21,7 +45,8 @@ class ProductsListPage extends Component {
     }
 
     render () {
-        var products = []
+        // var { products } = this.props
+        var { products } = this.state
         return (
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <button type="button" className="btn btn-info">
@@ -35,4 +60,10 @@ class ProductsListPage extends Component {
     }
 }
 
-export default ProductsListPage
+const mapStateToProps = state => {
+    return {
+        products : state.products
+    }
+}
+
+export default connect(mapStateToProps, null)(ProductsListPage)
