@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import ProductsList from '../../components/ProductsList/ProductsList'
 import ProductItem from '../../components/ProductsItem/ProductsItem'
 import { connect } from 'react-redux'
-import axios from 'axios'
+import callApi from '../../utils/apiCaller'
+import { Link } from 'react-router-dom'
 
 class ProductsListPage extends Component {
 
@@ -13,19 +14,35 @@ class ProductsListPage extends Component {
         }
     }
 
-    componentDidMount(){
-        axios({
-            method : 'GET',
-            url : 'http://localhost:3000/products',
-            data : null
-        }).then(res => {
-            console.log(res)
+    componentDidMount(){ // gọi lại để lấy data từ server, ( vì bất đồng bộ, k có thì k gọi data từ server dc)
+        callApi('products', 'GET', null).then(res => {
             this.setState({
                 products : res.data
             })
-        }).catch(err => {
-            console.log(err)
         })
+    }
+
+    onDelete = (id) => {
+        callApi(`products/${id}`, 'DELETE', null).then(res => {
+            var { products } = this.state
+            if (res.status === 200) {
+                var index = this.findIndex(products, id)
+                if (index !== -1) {
+                    products.splice(index, 1)
+                    this.setState({
+                        products : products
+                    })
+                }
+            }
+        })
+    }
+
+    findIndex = (products, id) => {
+        var result = -1
+        products.forEach((products, index) => {
+            result = index
+        })
+        return result
     }
 
     showProducts = (products) => {
@@ -34,6 +51,7 @@ class ProductsListPage extends Component {
             result = products.map((product, index) => {
                 return(
                     <ProductItem 
+                        onDelete = { this.onDelete }
                         key={index}
                         index={index} //lay ra so thu tu
                         product={product}
@@ -49,9 +67,9 @@ class ProductsListPage extends Component {
         var { products } = this.state
         return (
             <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <button type="button" className="btn btn-info">
+                <Link to="/product/add" className="btn btn-info">
                     Thêm sản phẩm
-                </button>
+                </Link>
                 <ProductsList>
                     { this.showProducts(products) }
                 </ProductsList>

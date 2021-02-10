@@ -1,9 +1,16 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class ProductsItem extends Component {
+
+    onDelete = (id) => {
+        if (confirm('ban co chac chan muon xoa ?')) { //eslint-disable-line
+            this.props.onDelete(id)
+        }
+    }
+
     render () {
         var { index, product } = this.props
-        console.log(product)
         var statusName = product.status ? 'Con Hang' : 'Het Hang'
         var statusClass = product.status ? 'warning' : 'default'
         return (
@@ -18,10 +25,10 @@ class ProductsItem extends Component {
                     </span>
                 </td>
                 <td>
-                    <button type="button" className="btn btn-success">
+                    <Link to={`/product/${product.id}/edit`} className="btn btn-success">
                         Sửa
-                    </button>
-                    <button type="button" className="btn btn-danger">
+                    </Link>
+                    <button type="button" className="btn btn-danger" onClick = { () => this.onDelete(product.id) }>
                         xóa
                     </button>
                 </td>

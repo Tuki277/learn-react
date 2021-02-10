@@ -18,12 +18,12 @@ const routes = [
     {
         path : '/product/add',
         exact : false,
-        main : () => <ProductsActionPage />
+        main : ({ history }) => <ProductsActionPage history = { history }/> // de redirect la trang web sau khi add san pham xong
     },
     {
         path : '/product/:id/edit',
         exact : false,
-        main : ({ match }) => <ProductsActionPage match = { match }/>
+        main : ({ match, history }) => <ProductsActionPage match = { match } history = { history }/>
     },
     {
         path : '',
